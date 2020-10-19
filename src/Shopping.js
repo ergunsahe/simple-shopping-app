@@ -9,7 +9,7 @@ import {
   Dimensions,
 } from 'react-native';
 import product_data from './product_data.json';
-import ProductCard from './components/ProductCard';
+import {ProductCard, SearchBar} from './components';
 
 const App = () => {
   const renderItem = ({item}) => <ProductCard product={item} />;
@@ -38,17 +38,12 @@ const App = () => {
             alignSelf: 'center',
             fontWeight: 'bold',
             fontSize: 25,
-            color:"violet"
+            color: 'violet',
           }}>
           CLARUSWAY SHOPPİNG
         </Text>
-        <View
-          style={{borderColor: 'gray', borderWidth: 1, margin: 5}}>
-          <TextInput
-            placeholder="ara....."
-            onChangeText={(val) => setSearchValue(val)}
-          />
-        </View>
+        <SearchBar onSearch={(val) =>setSearchValue(val)}/>
+        
 
         <FlatList
           keyExtractor={(item, index) => index.toString()}

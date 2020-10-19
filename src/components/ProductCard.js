@@ -11,13 +11,15 @@ const ProductCard = ({product}) => {
         }}
         source={{uri: product.imgURL}}
       />
-      <Text
-        style={{textDecorationLine: product.inStock ? null : 'line-through'}}>
-        {product.title}
-      </Text>
-      <Text>{product.price}</Text>
+      <View style={{flex: 1, justifyContent: 'center'}}>
+        <Text
+          style={{textDecorationLine: product.inStock ? null : 'line-through'}}>
+          {product.title}
+        </Text>
+        <Text>{product.price}</Text>
+      </View>
     </View>
   );
 };
 
-export default ProductCard;
+export {ProductCard};
